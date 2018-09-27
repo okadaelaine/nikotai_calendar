@@ -38,12 +38,12 @@ e colocarei o calendario ate o fim de dezembro
 
 """
 date_range = {}
-for i in range(initial_date_toordinal, end_date_toordinal + 1): #+1 para pegar o ultimo elemento (dia 31 de dezmebro)
-    if i % 6 in (0, 5):
-        date_range.update({datetime.date.fromordinal(i).isoformat(): '*'})
+for day in range(initial_date_toordinal, end_date_toordinal + 1): #+1 para pegar o ultimo elemento (dia 31 de dezmebro)
+    if day % 6 in (0, 5):
+        date_range.update({datetime.date.fromordinal(day).isoformat(): '*'})
     else:
-        if i % 12 in (1, 2, 3, 4):
-            date_range.update({datetime.date.fromordinal(i).isoformat(): 'B'}) #pega os primeiros dias de trabalho e coloca como B
+        if day % 12 in (1, 2, 3, 4):
+            date_range.update({datetime.date.fromordinal(day).isoformat(): 'B'}) #pega os primeiros dias de trabalho e coloca como B
         else:
-            date_range.update({datetime.date.fromordinal(i).isoformat(): 'A'})
+            date_range.update({datetime.date.fromordinal(day).isoformat(): 'A'})
 
